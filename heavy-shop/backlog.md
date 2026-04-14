@@ -29,15 +29,16 @@ Remplacer chaque champ entre crochets par votre contenu.
 - Critere de reussite: 100% des images produits sont servies au format WebP avec fallback JPEG. Les images sont redimensionnées côté serveur selon le viewport (`srcset`). Aucune image n'est étirée ou pixelisée sur les écrans testés (mobile, tablette, desktop)
 - Niveau de priorite: haute
 
-## User story 3
+## User story 3 : Minifier les fichiers CSS et JavaScript
 
-- Contexte: En tant que [role], je veux [action], afin de [valeur attendue].
-- Objectif: [objectif qualitatif ou chiffre]
-- Bonne pratique d eco-conception ciblee: [bonne pratique]
-- KPI associe: [indicateur de suivi]
-- Repo ou ecran concerne: [page, composant, parcours ou endpoint]
-- Critere de reussite: [resultat observable ou mesurable]
-- Niveau de priorite: [haute, moyenne ou basse]
+- Contexte: En tant qu'utilisateur régulier de la boutique, je veux que chaque page se charge rapidement, quelle que soit la section visitée (catalogue, panier, checkout), afin de ne pas être freiné dans mon parcours d'achat.
+- Objectif: Réduire le poids total des fichiers CSS et JS chargés sur l'ensemble du site de 40%, en supprimant le code mort et en minifiant les bundles, pour diminuer la consommation réseau à chaque visite.
+- Bonne pratique d eco-conception ciblee: RWEB_0077 "Minifier les fichiers CSS, JS, HTML et SVG"
+- KPI associe: Poids total CSS + JS au chargement initial (mesuré via DevTools > Coverage). passer de environ 1,2 Mo à 720 Ko de Js/CSS chargé.
+- Repo ou ecran concerne: Toutes les pages du shop : `/catalogue`, `/product/:id`, `/cart`, `/checkout`
+- Critere de reussite: Tous les fichiers CSS et JS sont minifiés et compressés (gzip ou Brotli) en production. Le Total Blocking Time est ≤ 200ms sur la page catalogue.
+
+- Niveau de priorite: haute
 
 ## Notes
 
